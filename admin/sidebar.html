@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../style.css" />
+     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+     <!-- <link rel="stylesheet" href="../plugin/bootstrap/css/bootstrap.css">
+     <script src="../plugin/bootstrap/js/bootstrap.js"></script> -->
+      <style>
+        *{
+            /* margin:0;
+            padding:0;
+            text-decoration: none;*/
+         list-style: none; 
+        }
+        .side-panel{
+            position: relative;
+            /* position: fixed; */
+            height: 100vh;
+            width: 300px;
+            background-color: #003B6E;
+            
+        }
+        .header{
+            /* display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;    */
+        }
+        .links{
+            /* padding: .5rem 0 1rem 2.5rem !important; */
+            color: white;
+            
+          
+        }
+        .links:hover{
+            background-color: #025093;
+        }
+        .link-icon {
+            width: 1.3rem;
+        }
+        .link-icon-mini {
+            width: 1.1rem;
+        }
+        .ul {
+            margin: 0;
+            padding: 0
+        }
+        .thin-font {
+            font-family: mThin;
+        }
+        .dropdown-rotate{
+            transform: rotate(-90deg);  
+        }
+        .dropdown {
+            width: 1rem;
+        }
+        #dropdown-tm {
+            justify-self: end;
+        }
+
+      </style>
+</head>
+<body>
+    <!-- <div class="p-4 bg-dark"></div> -->
+    <!-- <input type="text" name="" value="asdasd" id="hello"> -->
+    <aside id="side-bar" class="side-panel overflow-hidden d-none d-md-block" style="z-index: 1000;">
+        <!-- side panel header -->
+        <header class = "sidepanel-header px-4" style="margin: 1rem 0 2rem 0">
+            <a href="#" class = "header text-decoration-none d-flex  align-items-center gap-2 justify-content-center mt-4" >
+                <img src="../img/logo.png" alt="logo" style="max-height: 4rem;">
+                <span class = 'd-flex flex-column justify-content-center'>
+                    <h5 class = 'fs-3 m-0 p-0' style="font-size: 1.5rem;  color:white; font-family: mBold;">Chateau's</h5>
+                    <p class="text-white m-0 p-0">Payroll & Attendance</p>
+                </span>
+            </a>
+        </header>
+        <!-- nav links -->
+        <ul style = "display: flex; flex-direction: column; color: white;" class = 'ul'>
+            <!-- dash board -->
+            <li class = "links ps-4 py-1">
+                <a class = 'text-decoration-none d-flex align-items-center ps-1 gap-2' href="dashboard2.php" style=" color: white; font-size: 1rem;">
+                 <img src="../img/icons/dashboard.png" alt="" class = 'link-icon'>
+                <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- payroll -->
+            <li class = "links ps-1 py-1">
+                <a href="payroll_management.php " class='text-decoration-none ps-4 d-flex align-items-center gap-2'  style=" color: white; font-size: 1rem;">
+                <img src="../img/icons/payroll.png" alt="" class="link-icon">    
+                Payroll Information</a>
+            </li>
+            
+            <!-- timekeeping -->
+            <li class = "links ps-1 py-1">
+                <a href="#collapseTm" class='text-decoration-none ps-4 d-flex align-items-center gap-1' style=" color: white; font-size: 1rem;" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample" id="timeKeeping">
+                <img src="../img/icons/timekeeping.png" alt="" class="link-icon me-1">
+                Time Keeping
+                <img src="../img/icons/dropdown.png" alt="" class = 'dropdown dropdown-rotate' id="dropdown-tm">
+                </a>
+                <div class="collapse" id="collapseTm">
+                    <div class="d-flex flex-column ps-5 gap-1">
+                        <a href='employee_attendance.php' class=" text-decoration-none text-white  mt-2" class=""><img class='link-icon-mini me-2' src="../img/icons/attendance.png" alt="">Attendance</a>
+                        <a href='overtime.php' class=" text-decoration-none text-white " class=""><img class='link-icon-mini me-2' src="../img/icons/overtime.png" alt="">Overtime</a>
+                        <a href='holiday.php' class=" text-decoration-none text-white " class=""><img class='link-icon-mini me-2' src="../img/icons/overtime.png" alt="">Holidays</a>
+                    </div>
+                </div>
+            </li>
+            
+            <hr class="border-top border-light my-2 mx-4">
+
+            <!-- employee management -->
+            <li class = "links p-1">              
+                <a href="#collapseEmp" class='text-decoration-none ps-3 d-flex gap-1 align-items-center' style=" color: white; font-size: 1rem;" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample" id="employeeManagement">
+                <img src="../img/icons/employeee.png" alt="" class = 'link-icon' style="width: 1.6rem" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Employee Management
+                <img src="../img/icons/dropdown.png" alt="" class="dropdown ms-1 dropdown-rotate " id="dropdown-em">
+            
+            </a>
+            <div class="collapse" id="collapseEmp">
+                <div class="d-flex flex-column ps-5 gap-1">
+                    <a href='employee_list.php'class=" text-decoration-none text-white mt-2" class=""><img class='link-icon-mini me-2' src="../img/icons/employee_list.png" alt="">Employee List</a>
+                    <a href='leave.php'class="text-decoration-none text-white" class=""><img class='link-icon-mini me-2' src="../img/icons/deductions.png" alt="">Paid Leave</a>
+                </div>
+            </div>
+            </li>
+
+            <!-- position -->
+            <li class = "links py-1 ps-2">
+                <a href="position_.php" class='text-decoration-none ps-2' style=" color: white; font-size: 1rem;">
+                    <img src="../img/icons/positions.png" alt="" class="link-icon" style="width: 1.7rem">    
+                    <span class="ms-1">Designations</span>
+            </li>
+
+                        <!-- position -->
+            <!-- <li class = "links py-1">
+                <a href="compensation_deduc.php" class='text-decoration-none ps-3' style=" color: white; font-size: 1.1rem ">
+                    <img src="../img/icons/positions.png" alt="" class="link-icon" style="width: 1.7rem">    
+                    Compensation & Deductions</a>
+            </li> -->
+
+            <!-- Schedule -->
+            <li class = "links py-1 ps-2">
+                <a href="schedule.php" class='text-decoration-none ps-2' style=" color: white; font-size: 1rem">
+                    <img src="../img/icons/schedule.png" alt="" class="link-icon">    
+                    <span class="ms-1">Schedules</span>
+                </a>
+            </li>
+            <!-- casg advance -->
+            <li class = "links py-1">
+                <a href="cash_advance.php" class='text-decoration-none ps-4' style=" color: white; font-size: 1rem">
+                    <img src="../img/icons/cashadvance.png" alt="" class="link-icon" width="5rem" style="width: 1rem;">    
+                    <span class="ms-1">Cash Advance</span>
+                </a>
+            </li>
+
+            <li class = "links py-1">
+                <a href="compensation_deduc.php" class='text-decoration-none ps-4 d-flex align-items-center gap-2' style=" color: white; font-size: 1.1rem">
+                    <img src="../img/icons/plus_minus.png" alt="" class="link-icon" width="5rem" style="width: 1rem;">    
+                    <span style="font-size: 1rem">
+                        <div>
+                            Compensation & 
+                        </div>
+                        <div style="margin-top: -7px">
+                            Deduction
+                        </div>
+                    </span>
+                </a>
+            </li>
+
+            <hr class="border-top border-light my-2 mx-4">
+            
+            <!-- company management -->
+            <li class = "links py-1">
+                <a href="company_management.php" class='text-decoration-none d-flex gap-2 align-items-center ps-4' style=" color: white; font-size: 1rem">
+                    <img src="../img/icons/company_management.png" alt="" class = 'link-icon'>
+                    <span style=" color: white; font-size: 1rem">Company Management</span>
+                </a>
+            </li>
+            <!-- activity logs -->
+            <li class = "links py-1">
+                <a href="activity_log.php" class='text-decoration-none d-flex gap-2 align-items-center ps-4' style=" color: white; font-size: 1rem">
+            <img src="../img/icons/actlogs.png" alt="" class = 'link-icon'>
+                Activity Log</a>
+            </li>
+
+            <li class = "links py-1">
+                <a href="report_generation.php" class='text-decoration-none d-flex gap-2 align-items-center ps-4' style=" color: white; font-size: 1rem">
+            <img src="../img/icons/report.png" alt="" class = 'link-icon'>
+                Report Generation</a>
+            </li>
+
+            <!-- account settigns -->
+            <li class = "links py-1">
+                <a href="account_setting.php" class='text-decoration-none d-flex gap-2 align-items-center ps-4' style=" color: white; font-size: 1rem">
+            <img src="../img/icons/settings.png" alt="" class = 'link-icon'>
+                Account Settings</a>
+            </li>
+
+            <li class = "links p-2 border-top d-flex align-items-center justify-content-center position-absolute w-100 bottom-0">
+                <a href="session/log_out.php" class='text-decoration-none' style=" color: white; ">
+                <img src="../img/icons/logout.png" alt="" class="link-icon">
+                Logout</a>
+            </li>
+            <!-- <li class = "links p-1"> -->
+        </ul>
+    </aside>
+    <script>
+        let timeKeeping = document.querySelector('#timeKeeping')
+        let employeeManagement = document.querySelector('#employeeManagement')
+        let dropdownTm = document.querySelector('#dropdown-tm')
+        let dropdownEm = document.querySelector('#dropdown-em')
+
+        timeKeeping.addEventListener('click', ()=>{
+            dropdownTm.classList.toggle('dropdown-rotate')
+        })
+        employeeManagement.addEventListener('click', ()=>{
+            dropdownEm.classList.toggle('dropdown-rotate')
+        })
+    </script>
+</body>
+</html>

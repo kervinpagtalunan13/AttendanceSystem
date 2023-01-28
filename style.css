@@ -1,0 +1,417 @@
+/*Fonts*/
+@font-face {
+  font-family: 'mBold';
+  src: url(fonts/metropolis-bold.otf);
+}
+@font-face {
+  font-family: 'mBolder';
+  src: url(fonts/metropolis-bolder.otf);
+}
+@font-face {
+  font-family: 'mThin';
+  src: url(fonts/metropolis-thin.otf);
+}
+/*fonts ends here*/
+
+
+
+
+.body{
+  margin:0px;
+}
+
+.req{
+  font-family: mBolder;
+  color: red;
+  font-size: 20px;
+  position: absolute;
+}
+
+/* h1 {
+  font-family: mBold;
+} */
+
+
+
+/*text inputs*/
+.textInputs{
+  padding-left: 10px;
+  width: 170px;
+  height: 25px;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: grey;
+}
+.inputLables{
+  font-family:mBold;
+}
+/*text inputs ends here*/
+
+
+
+
+
+/*bg*/
+.bgg{
+    width:100%;
+    height: 100vh;
+    /*background-image: url('img/bg.png');*/
+    background-color: #D5D5D5;
+    background-size: cover;
+    background-position: center;
+}
+.contents{
+    padding-top: 200px;
+}
+/*bg ends here*/
+
+
+
+
+/*topNav*/
+.topNav{
+  padding: 10px;
+  position: fixed;
+  z-index: 1;
+  background-color: #F9F9F9;
+  height: 50px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+/*topNav ends here*/
+
+
+
+
+/*login*/
+.loginForm{
+    border-radius: 2rem;
+    margin: auto;
+    height: 350px;
+  width: 300px;
+  background-color: white;
+  animation-name: loginF;
+  animation-duration: 1s;
+}
+@keyframes loginF{
+  0% {opacity: 0%; margin-top: 50px;}
+  100%{opacity: 100%; margin-top: 0px;}
+}
+.loginBtn{
+  font-family: mBold;
+  background-color: #1C9DFF;
+  color:white;
+  border-width: 0px;
+  width: 90px;
+  height: 40px;
+  border-radius: 1rem;
+  margin-bottom: 20px;
+}
+.loginBtn:hover{
+  transition: 0.5s;
+  filter: contrast(180%);
+}
+/*Login Ends here*/
+
+/*dashboard*/
+.dashboard{
+  padding:50px;
+  border-radius: 2rem;
+  margin: auto;
+  background-color: white;
+  height: 500px;
+  width: 1000px;
+  margin-bottom: 100px;
+  animation-name: empMan;
+  animation-duration: 1s;
+}
+.dashNums{
+  border-radius: 0.5rem;
+  color: white;
+  display:flex; 
+  justify-content:center; 
+  align-items:center;
+  text-align: center;
+}
+.dNums{
+  font-family: mBold;
+  font-size:50px;
+}
+.subText{
+  font-size: 13px;
+  font-family:mThin;
+}
+/*dashboard ends here*/
+
+
+/*admin controls*/
+.adminControls{
+  border-radius: 2rem;
+  margin: auto;
+  height: 350px;
+  width: 1100px;
+  background-color: white;
+  animation-name: adminCon;
+  animation-duration: 1s;
+}
+@keyframes adminCon {
+  0% {opacity: 0%; margin-top: 50px;}
+  100%{opacity: 100%; margin-top: 0px;}
+}
+.btns{
+  filter: contrast(90%);
+  margin-left: 25px;
+  width: 240px;
+}
+.btns:hover{
+  filter: contrast(150%);
+  width: 245px;
+  transition: 0.5s;
+}
+.btnList{
+  display:flex; 
+  align-items: center; 
+  padding-top: 20px;
+  display: block;
+  justify-content: center;
+}
+/*admin controls ends here*/
+
+/*table*/
+.tableStyle{
+  display:flex; 
+  justify-content:center; 
+  margin-top: 30px; 
+}
+.tables{
+  border-radius: 1rem;
+  border:0.5px solid;
+}
+.tables, th{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-collapse: collapse;
+  /* border-bottom: 1.5px solid; */
+  font-family: mBold;
+}
+.tables, td{
+  /* border-bottom: 0.1px #707070 solid; */
+  padding: 8px;
+  /* font-family: mThin; */
+}
+.tables, td, th{
+  text-align: center;
+}
+.separator{
+  padding-right: 400px;
+}
+/*table ends here*/
+
+/*employee management*/
+.employeeManagement{
+  border-radius: 2rem;
+  margin: auto;
+  background-color: white;
+  height: 500px;
+  width: 1000px;
+  margin-bottom: 100px;
+  animation-name: empMan;
+  animation-duration: 1s;
+}
+@keyframes empMan {
+  0% {opacity: 0%; margin-top: 50px;}
+  100%{opacity: 100%; margin-top: 0px;}
+}
+.searchBtn{
+  font-family: mThin;
+  background-color: #1C9DFF;
+  color:white;
+  border-width: 0px;
+  width: 80px;
+  height: 35px;
+  border-radius: 1rem;
+}
+.addBtn{
+  font-family: mThin;
+  background-color: #279BF3;
+  color:white;
+  border-width: 0px;
+  width: 110px;
+  height: 30px;
+  border-radius: 1rem;
+}
+.toggleBTN{
+  font-family: mThin;
+  color:white;
+  border-width: 0px;
+  width: 110px;
+  height: 30px;
+  border-radius: 1rem;
+}
+.searchBtn:hover{
+  transition: 0.5s;
+  filter: contrast(180%);
+}
+.toggleBTN:hover{
+  transition: 0.5s;
+  filter: contrast(180%);
+}
+.addBtn:hover{
+  transition: 0.5s;
+  filter: contrast(180%);
+}
+/*employee management ends here*/
+
+
+
+
+/*add employee*/
+.addEmployee{
+  padding:30px;
+  border-radius: 2rem;
+  margin: auto;
+  background-color: white;
+  height: 550px;
+  width: 1000px;
+  margin-bottom: 100px;
+  animation-name: empMan;
+  animation-duration: 1s;
+}
+
+/* margin-top: 20px; */
+.addBtnn{
+  font-family: mBold;
+  background-color: #1C9DFF;
+  color:white;
+  border-width: 0px;
+  width: 150px;
+  height: 70px;
+  font-size: large;
+  border-radius: 1rem;
+  margin-bottom: 20px;
+}
+.addBtnn:hover{
+  transition: 0.5s;
+  filter: contrast(180%);
+}
+/*add employee ends here*/
+
+
+
+
+/*view employee*/
+.viewEmployee{
+  padding:50px;
+  border-radius: 2rem;
+  margin: auto;
+  background-color: white;
+  height: 320px;
+  width: 1000px;
+  margin-bottom: 100px;
+  animation-name: empMan;
+  animation-duration: 1s;
+}
+.employeeName{
+font-family: mBold;
+font-size: 30px;
+}
+.role{
+align-items: center;
+display: flex;
+justify-content: center;
+font-size: 15px;
+color: white;
+font-family: mThin;
+background-color: #D6AB1D;
+text-align: center;
+/* width: 150px; */
+/* height: 25px; */
+}
+.status{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
+  font-family: mThin;
+  background-color: #22A1B5;
+  text-align: center;
+  width: 150px;
+  height: 25px;
+  }
+.workType{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
+  font-family: mThin;
+  background-color: #22B544;
+  text-align: center;
+  width: 150px;
+  height: 25px;
+  }
+.detailsBtns{
+  margin-right: 3px;
+  font-family: mThin;
+  font-size: 20px;
+  color: white;
+  width: 130px;
+  height: 40px;
+  border-radius: 1rem;
+  border-width: 0px;
+}
+.detailsBtns:hover{
+  transition: 0.5s;
+  filter: contrast(180%);
+}
+/*view employee ends here*/
+
+
+
+
+/*view id*/
+.viewID{
+  padding:50px;
+  border-radius: 2rem;
+  margin: auto;
+  background-color: white;
+  height: 1100px;
+  width: 1000px;
+  margin-bottom: 100px;
+  animation-name: empMan;
+  animation-duration: 1s;
+}
+/*view id ends here*/
+
+
+/*employee attendance*/
+.employeeAttendance{
+  border-radius: 2rem;
+  margin: auto;
+  background-color: white;
+  height: 500px;
+  width: 1000px;
+  margin-bottom: 100px;
+  animation-name: empMan;
+  animation-duration: 1s;
+}
+.status{
+  align-items: center;
+display: flex;
+justify-content: center;
+font-size: 15px;
+color: white;
+font-family: mThin;
+background-color: #22B544;
+text-align: center;
+width: 150px;
+height: 25px;
+border-radius: 1rem;
+}
+.attendanceTable{
+  padding-right: 20px;
+  padding-left: 20px;
+}
