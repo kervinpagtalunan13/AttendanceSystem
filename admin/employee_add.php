@@ -3,7 +3,7 @@
   include 'session/check_user.php';
   $output = array('error'=>true);
   // isset($_POST['fingerPrint']) && isset($_POST['fName']) && isset($_POST['mName']) && isset($_POST['lName']) && isset($_POST['employee_Role']) && isset($_POST['schedule']) && isset($_POST['Birthday']) && isset($_POST['civilStatus']) && isset($_POST['SSS']) && isset($_POST['Tax']) && isset($_POST['Contact']) && isset($_POST['Email']) && isset($_POST['PhilHealth']) && isset($_POST['Pagibig']) && isset($_POST['Address']) && isset($_POST['workType']) && 
-  if(isset($_POST['fingerPrint']) && isset($_POST['fName']) && isset($_POST['mName']) && isset($_POST['lName']) && isset($_POST['employee_Role']) && isset($_POST['schedule']) && isset($_POST['Birthday']) && isset($_POST['civilStatus']) && isset($_POST['SSS']) && isset($_POST['Tax']) && isset($_POST['Contact']) && isset($_POST['Email']) && isset($_POST['PhilHealth']) && isset($_POST['Pagibig']) && isset($_POST['Address']) && isset($_POST['workType'])){
+  if(isset($_POST['fName']) && isset($_POST['mName']) && isset($_POST['lName']) && isset($_POST['employee_Role']) && isset($_POST['schedule']) && isset($_POST['Birthday']) && isset($_POST['civilStatus']) && isset($_POST['Contact']) && isset($_POST['Email'])  && isset($_POST['Address']) && isset($_POST['workType'])){
     include '../connect.php';
 
     $fName=$_POST['fName'];
@@ -13,8 +13,10 @@
     $employee_sched=$_POST['schedule'];
     $Birthday=$_POST['Birthday'];
     $civilStatus=$_POST['civilStatus'];
-    $SSS=$_POST['SSS'];
-    $Tax=$_POST['Tax'];
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    // $SSS=$_POST['SSS'];
+    // $Tax=$_POST['Tax'];
     $Contact=$_POST['Contact'];
     $Email=$_POST['Email'];
 
@@ -26,26 +28,26 @@
     }else{
       $Email = "'$Email'";
     }
-    $PhilHealth=$_POST['PhilHealth'];
-    $Pagibig=$_POST['Pagibig'];
+    // $PhilHealth=$_POST['PhilHealth'];
+    // $Pagibig=$_POST['Pagibig'];
     $Address=$_POST['Address'];
     $workType=$_POST['workType'];
-    $fingerPrint = $_POST['fingerPrint'];
+    // $fingerPrint = $_POST['fingerPrint'];
     $employee_status="Active";
 
     //creating employee key
-    $letters = '';
-    $numbers = '';
-    foreach (range('A', 'Z') as $char) {
-      $letters .= $char;
-    }
-    for($i = 0; $i < 10; $i++){
-      $numbers .= $i;
-    }
-    $employee_key = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
+    // $letters = '';
+    // $numbers = '';
+    // foreach (range('A', 'Z') as $char) {
+    //   $letters .= $char;
+    // }
+    // for($i = 0; $i < 10; $i++){
+    //   $numbers .= $i;
+    // }
+    // $employee_key = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
 
-    $sql="insert into `employeelist` (employee_key, fingerprint_id,fName, mName,lName,employee_Role,Birthday,civilStatus,SSS,Tax,Contact,Email,PhilHealth,Pagibig,Address,workType,sched, employee_status)
-    values('$employee_key', '$fingerPrint','$fName','$mName','$lName','$employee_Role','$Birthday','$civilStatus','$SSS' ,'$Tax','$Contact',$Email,'$PhilHealth','$Pagibig','$Address','$workType','$employee_sched', '$employee_status')";
+    $sql="insert into `employeelist` (fName, mName,lName,employee_Role,Birthday,civilStatus,Contact,Email,Address,workType,sched, employee_status, username, password)
+    values('$fName','$mName','$lName','$employee_Role','$Birthday','$civilStatus','$Contact',$Email,'$Address','$workType','$employee_sched', '$employee_status', '$username', '$password')";
 
     try {
       if($result = $con->query($sql)){
@@ -59,28 +61,28 @@
         $picExtension = explode(".", $profilePicture);
         $countPic = count($picExtension);
     
-        $id1Extension = explode(".", $id1);
-        $countid1 = count($id1Extension);
+        // $id1Extension = explode(".", $id1);
+        // $countid1 = count($id1Extension);
     
-        $id2Extension = explode(".", $id2);
-        $countid2 = count($id2Extension);
+        // $id2Extension = explode(".", $id2);
+        // $countid2 = count($id2Extension);
     
         //sineset na yung filepath
         $picLocation = "../employees_files/profile_pics/Employee".$id.".".$picExtension[$countPic-1];
-        $id1Location = "../employees_files/IDs/EmployeeID1_".$id.".".$id1Extension[$countid1-1];
-        $id2Location = "../employees_files/IDs/EmployeeID2_".$id.".".$id2Extension[$countid2-1];
+        // $id1Location = "../employees_files/IDs/EmployeeID1_".$id.".".$id1Extension[$countid1-1];
+        // $id2Location = "../employees_files/IDs/EmployeeID2_".$id.".".$id2Extension[$countid2-1];
     
     
-        $sql="UPDATE `employeelist` SET `ProfilePic`='$picLocation',`id1` = '$id1Location',`id2`='$id2Location' WHERE id = $id";
+        $sql="UPDATE `employeelist` SET `ProfilePic`='$picLocation' WHERE id = $id";
         // $result=mysqli_query($con,$sql);
         if($con->query($sql)){
           #minomive na yung mga files sa folder sa htdocs
           move_uploaded_file($_FILES['profilePic']['tmp_name'], $picLocation);
-          move_uploaded_file($_FILES['id1']['tmp_name'], $id1Location);
-          move_uploaded_file($_FILES['id2']['tmp_name'], $id2Location);
+          // move_uploaded_file($_FILES['id1']['tmp_name'], $id1Location);
+          // move_uploaded_file($_FILES['id2']['tmp_name'], $id2Location);
           // $_SESSION['success'] = 'Added Succesfully';
-          $sql = "INSERT INTO `deductioninfo`(`employee_id`, `SSS`, `Philhealth`, `Pagibig`) VALUES ('$id','255','255','255')";
-          $con->query($sql);
+          // $sql = "INSERT INTO `deductioninfo`(`employee_id`, `SSS`, `Philhealth`, `Pagibig`) VALUES ('$id','255','255','255')";
+          // $con->query($sql);
           $_SESSION['success'] = '<b>Added Succesfully</b>, '.$fName." ".$mName." ".$lName. " has been added to Employee List";
           $output['message'] = 'Added Succesfully';
           $output['error'] = false;

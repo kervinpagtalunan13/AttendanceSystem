@@ -9,27 +9,27 @@
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     // echo '<img src="'.base64_encode( $row['Image'] ).'"/>';
-    $fingerPrint_id=$row['fingerprint_id'];
+    // $fingerPrint_id=$row['fingerprint_id'];
     $fName=$row['fName'];
     $mName=$row['mName'];
     $lName=$row['lName'];
     $employee_Role=$row['employee_Role'];
     $Birthday=$row['Birthday'];
     $civilStatus=$row['civilStatus'];
-    $SSS=$row['SSS'];
-    $Tax=$row['Tax'];
     $Contact=$row['Contact'];
     $Email=$row['Email'];
-    $PhilHealth=$row['PhilHealth'];
-    $Pagibig=$row['Pagibig'];
+    // $PhilHealth=$row['PhilHealth'];
+    // $SSS=$row['SSS'];
+    // $Tax=$row['Tax'];
+    // $Pagibig=$row['Pagibig'];
     $Address=$row['Address'];
     $profilePic=$row['ProfilePic'];
     $schedule = $row['sched'];
-    $id1=$row['id1'];
-    $id2=$row['id2'];
+    // $id1=$row['id1'];
+    // $id2=$row['id2'];
     //  $profile = "data:image;base64,".base64_encode($row['Image']);
-    $id1=$row['id1'];
-    $id2=$row['id2'];
+    // $id1=$row['id1'];
+    // $id2=$row['id2'];
     $employee_status=$row['employee_status'];
     $workType=$row['workType'];
     
@@ -303,10 +303,10 @@
                             <label class="">Schedule</label>
                         </div>
                         
-                        <div style="display:block;" class='form-floating'>
+                        <!-- <div style="display:block;" class='form-floating'>
                             <input name="fingerprint" class="form-control" type="text" value="<?php echo $fingerPrint_id; ?>" id='finger-print' placeholder='asdas'>
                             <label class="">Finger print ID</label>
-                        </div>
+                        </div> -->
                         <!--Status-->
                         <div style=" display:block;" class='form-floating'>
                             
@@ -344,7 +344,7 @@
                     </div>
 
                     <!-- Ids -->
-                    <p class="fs-4 m-0 mt-3">IDs</p>
+                    <!-- <p class="fs-4 m-0 mt-3">IDs</p>
                     <div class='d-flex align-items-center gap-3'>
                         <div style="display:block;" class='form-floating'>
                             <input id="taxNo" name="taxNo" class="form-control IDs" type="text" value="<?php echo $Tax; ?>" required placeholder = 'asdasd'>
@@ -362,7 +362,7 @@
                             <input id="PhilHealth" name="PhilHealth" class="form-control IDs" type="text" value="<?php echo $PhilHealth; ?>" required placeholder = 'asdasd'>
                             <label class="">PhilHealth No.</label>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class='d-flex justify-content-end'>
                         <button class="rounded-2 p-0 py-0 addBtnn" type="submit" name="update">Edit Employee</button>

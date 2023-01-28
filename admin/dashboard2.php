@@ -12,9 +12,10 @@
     $year_count = date('Y');
   }
 
+  $dateNow = date('Y-m-d');
   $year_filter = date('Y');
 
-  $sql = "SELECT * FROM employeelist";
+  $sql = "SELECT * FROM employeelist WHERE employee_status = 'Active'";
   $query = $con->query($sql);
   $totalEmp = $query->num_rows;
 
@@ -93,12 +94,42 @@
                 } 
                 ?></h3>
         </div>
-        <div class="bg-body shadow-sm rounded-1 col-12 col-lg-6 p-3">
+        <div class="bg-body shadow-sm rounded-1 col-2 p-3">
+          <p class="fs-6 text-dark m-0">Present</p> 
+          <h3><?php
+                $sql = "SELECT * FROM attendance_csv WHERE date = '$dateNow'";
+                if($query = $con->query($sql)){
+                  echo $query->num_rows;
+                } 
+                ?></h3>
+        </div>
+
+        <div class="bg-body shadow-sm rounded-1 col-2 p-3">
+          <p class="fs-6 text-dark m-0">Late</p> 
+          <h3><?php
+                $sql = "SELECT * FROM attendance_csv WHERE date = '$dateNow' and status = 1";
+                if($query = $con->query($sql)){
+                  echo $query->num_rows;
+                } 
+                ?></h3>
+        </div>
+
+        <div class="bg-body shadow-sm rounded-1 col-2 p-3">
+          <p class="fs-6 text-dark m-0">On Leave</p> 
+          <h3><?php
+                $sql = "SELECT * FROM attendance_csv WHERE date = '$dateNow'";
+                if($query = $con->query($sql)){
+                  echo $query->num_rows;
+                } 
+                ?></h3>
+        </div>
+        
+        <!-- <div class="bg-body shadow-sm rounded-1 col-12 col-lg-6 p-3">
           <div class="d-flex align-items-center justify-content-between">
             <p class="fs-6 text-dark m-0 align-self-start mb-2">Payroll Information</p> 
-            <div class="d-flex align-items-center gap-3 me-2">
+            <div class="d-flex align-items-center gap-3 me-2"> -->
               <!-- <input type="text" name="payroll-date" id="payroll-date" class="form-control text-end border-0 shadow-none" style='min-width: 300px'> -->
-              <p>Current Period: <span id="period" class="">Oct 10, 2022 - Oct 24, 2022</span></p>
+              <!-- <p>Current Period: <span id="period" class="">Oct 10, 2022 - Oct 24, 2022</span></p>
             </div>
           </div>
             <main class='row'>
@@ -113,13 +144,13 @@
               <div class="net-pay col-4">
                 <p class="fs-6 text-dark m-0">Net Pay</p>
                 <h3>&#8369;<span id="netpay"></span></h3>
-              </div>
+              </div> -->
               <!-- <div class="deductions col-auto  d-flex align-items-center justify-content-center" style=''>
                 <button class="btn btn-success py-1" onclick='location.href = "payroll_management.php"'>run payroll</button>
               </div> -->
-            </main>
-        </div>
-        <div class=" rounded-1 col-auto">
+            <!-- </main>
+        </div> -->
+        <!-- <div class=" rounded-1 col-auto">
           <p class="fs-6 text-dark m-0 ">Next Pay-day</p> 
           <div class="p-2 bg-success rounded-2">
             <div class="p4 text- bg-white rounded-1 text-center">
@@ -129,7 +160,7 @@
               <p id = 'nextPayDay-month' class='m-0 p-0 fs-6'></p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div> 
       
       <div class="row gap-3 ms-0 mt-3">
@@ -149,7 +180,7 @@
         <!-- <div class="bg-body shadow-sm rounded-2 col-12 col-md-5 col-xl-3 pt-3 p-1 m-0 position-relative overflow-hidden p-4" id='' style="height: 210px">
         </div> -->
 
-        <div class="col-12 col-md-5 col-xl-2 p-0 gap-3">
+        <!-- <div class="col-12 col-md-5 col-xl-2 p-0 gap-3">
           <div class="row gap-3">
 
             <div class="bg-body shadow-sm col-5 col-md-12 ms-3 rounded-1 p-3 ">
@@ -174,7 +205,7 @@
                 } 
                 ?></h3>
           </div>
-        </div>
+        </div> -->
       </div>
       </div>
       

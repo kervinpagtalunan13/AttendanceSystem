@@ -94,7 +94,7 @@
                 $rowPos = $result2->fetch_assoc();
                 $posDesc = $rowPos['description'];
                 $status = $row['employee_status'];      
-                $employee_key = $row['employee_key'];
+                /*$employee_key = $row['employee_key'];*/
                 $pic = $row['ProfilePic'];
                 // <td>'.$employee_key .'</td>
                 echo '
@@ -222,44 +222,41 @@
                 </div>
               </div>
               <!--  -->
-              <p class="fs-4 m-0">ID Information</p>
-              <div style="" class='d-flex align-items-center gap-3'>                          
-                <!--Tax Number Input-->
+              <!-- <p class="fs-4 m-0">ID Information</p> -->
+              <!-- <div style="" class='d-flex d-none align-items-center gap-3'>                          
                 <div style="" class='form-floating flex-grow-1 '>
                   <input name="Tax" class=" form-control flex-grow-1 IDs" type="text"  placeholder='asd'required>
                     <label class=" " style='font-size: .9rem'>Tax Number<label class="req">*</label></label>
                 </div>
                 
-                <!--SSS Input-->
                 <div style="" class='form-floating flex-grow-1'>
                   <input name="SSS" class=" form-control IDs" type="text"  placeholder='asd'required>
                   <label class=" ">SSS Number<label class="req">*</label></label>
                 </div>
               
-                <!-- philhealth -->
                 <div style="display:block;" class='form-floating flex-grow-1'>
                   <input name="PhilHealth" class=" form-control IDs" type="text"  placeholder='asd'required>
                   <label class="" style='font-size: .9rem'>PhilHealth Number<label class="req">*</label></label>
                 </div>
               
-                <!--PagIbig Number Input-->
                 <div style="display:block;" class='form-floating flex-grow-1'>
                   <input name="Pagibig" class=" form-control IDs" type="text"  placeholder='asd'required>
                   <label class=""style='font-size: .9rem'>PagIbig Number<label class="req">*</label></label>
                 </div>
-              </div>
-              <div style=" display:flex; align-items: center; gap:30px;" class='mb-3 mt-2'>
-                <!--ID 1 Input-->
+              </div> -->
+
+
+              <!-- <div style=" display:flex; align-items: center; gap:30px;" class='mb-3 mt-2'>
                 <div style="" class='m-0 p-0'>
                   <label class="" style='font-size: .9rem'>ID 1<label class="req" >*</label></label>
                   <input name="id1" type="file" accept="image/*"  class='form-control'required>
                 </div>
-                <!--ID 2 Input-->
                 <div style="" class=''>
                   <label class="">ID 2<label class="req">*</label></label>
                   <input name="id2" type="file" accept="image/*" class='form-control'required>
                 </div>
-              </div>
+              </div> -->
+
               <p class="fs-4 m-0">Work Information</p>
               <div class="d-flex align-items-center gap-3">
                 <!-- work type -->
@@ -302,10 +299,20 @@
                   <label class="" style='font-size: .9rem'>Schedule<label class="req">*</label></label>
                 </div>
 
-                <div class="form-floating">
+                <!-- <div class="form-floating">
                   <input type="text" name="fingerPrint" id="" class="form-control"  placeholder='asd'required>
                   <label class="" style='font-size: .9rem'>finger print ID<label class="req">*</label></label>
+                </div> -->
+
+                <div class="form-floating">
+                  <input type="text" name="username" id="" class="form-control"  placeholder='asd'required>
+                  <label class="" style='font-size: .9rem'>Username<label class="req">*</label></label>
                 </div>
+                <div class="form-floating">
+                  <input type="text" name="password" id="" class="form-control"  placeholder='asd'required>
+                  <label class="" style='font-size: .9rem'>Password<label class="req">*</label></label>
+                </div>
+
               </div>
               <div class="alert alert-danger position-relative mt-3" role="alert" id = "addAlert">
                 <span></span>
@@ -371,7 +378,7 @@
             processData: false,
             contentType: false,
             data: fd,
-            dataType: 'json',
+            dataType: 'text',
             success: data => {
               console.log(data)
               if(!data.error){

@@ -215,8 +215,8 @@ $sched = $querySched->fetch_assoc();
               </div>
             </div>
 
-            <p class="fs-5 m-0 mt-3">IDs</p>
-            <div class="d-flex gap-3 align-items-center">
+            <!-- <p class="fs-5 m-0 mt-3">IDs</p> -->
+            <!-- <div class="d-flex gap-3 align-items-center">
               <div class="form-floating">
                 <input type="text" name="bday" id="" class="form-control bg-white border" value='<?php echo $Tax?>' disabled>
                 <label for="bday" class=''>Tax number</label>
@@ -235,8 +235,8 @@ $sched = $querySched->fetch_assoc();
               </div>
 
               <a href="employee_view_id.php?id=<?php echo $id?>" class='fs-5 text-decoration-none text-dark'>View IDs&#8618;</a>
-              <!-- <button style="background-color: #22B544;" class="btn rounded-2 text-light">View IDs</button> -->
-            </div>
+
+            </div> -->
           </div>
 
           <!-- buttons -->

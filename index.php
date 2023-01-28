@@ -31,7 +31,8 @@
             <option value="in">Time-in</option>
             <option value="out">Time-out</option>
         </select>
-        <input type="text" name = 'key' placeholder = 'Employee Key' class = "form-control rounded-0 shadow-none">
+        <input type="text" name = 'username' placeholder = 'username' class = "form-control rounded-0 shadow-none">
+        <input type="text" name = 'password' placeholder = 'password' class = "form-control rounded-0 shadow-none">
         <input type="submit" value="Proceed" class = "btn btn-success btn-lg rounded-1">
     </form>
         <div class="alert mx-100 d-absolute" role="alert">

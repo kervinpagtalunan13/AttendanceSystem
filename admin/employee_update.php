@@ -31,19 +31,19 @@
 
     $no = $_POST["Contact"];
     $add = $_POST["Address"];
-    $fingerprint = $_POST['fingerprint'];
     $sched = $_POST['schedule'];
-
     
-
-    $taxNo = $_POST['taxNo'];
-    $SSS = $_POST['SSS'];
-    $Pagibig = $_POST['Pagibig'];
-    $PhilHealth = $_POST['PhilHealth'];
+    
+    
+    // $fingerprint = $_POST['fingerprint'];
+    // $taxNo = $_POST['taxNo'];
+    // $SSS = $_POST['SSS'];
+    // $Pagibig = $_POST['Pagibig'];
+    // $PhilHealth = $_POST['PhilHealth'];
 
 
     $sql = "UPDATE `employeelist` SET `civilStatus`='$civilStat', `Contact`='$no',`Email` = $email,
-    `Address`='$add' ,`Birthday`='$Birthday',`employee_status`='$empStatus',`fName`='$fName',`mName`='$mName',`lName`='$lName', `employee_Role`='$role', fingerprint_id = '$fingerprint', sched = '$sched', workType='$workType', Tax='$taxNo', SSS='$SSS', PhilHealth='$PhilHealth', Pagibig='$Pagibig'";
+    `Address`='$add' ,`Birthday`='$Birthday',`employee_status`='$empStatus',`fName`='$fName',`mName`='$mName',`lName`='$lName', `employee_Role`='$role', sched = '$sched', workType='$workType'";
 
     // $picLocation = '';
     if(file_exists($_FILES['profilePic']['tmp_name'])){
